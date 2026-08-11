@@ -1,0 +1,33 @@
+:root {
+  --primary-color: #c26128;   /* Фірмовий помаранчевий */
+  --primary-hover: #a34e1f;
+  --bg-dark: #1e1e1e;         /* Темний колір хедера/футера */
+  --text-dark: #2c2c2c;
+  --text-light: #ffffff;
+  --bg-light: #f8f9fa;
+  --font-main: system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
