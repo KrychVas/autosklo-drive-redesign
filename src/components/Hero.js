@@ -1,3 +1,5 @@
+import '../styles/hero.css';
+
 export function renderHero() {
   return `
     <section class="hero" id="hero">

@@ -1,9 +1,11 @@
+import '../styles/header.css';
+
 export function renderHeader() {
   return `
-    <!-- Широка помаранчева смуга без написів -->
-    <div class="top-bar-orange"></div>
-
     <header class="header">
+      <!-- Помаранчева смуга всередині sticky-шапки -->
+      <div class="top-bar-orange"></div>
+
       <div class="container header__container">
         <!-- Логотип -->
         <a href="#" class="header__logo">
