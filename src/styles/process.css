@@ -1,0 +1,151 @@
+/* --- PROCESS SECTION --- */
+.process {
+  padding: 80px 0;
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+}
+
+.process__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.process .section-subtitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.process .section-title {
+  font-size: 34px;
+  color: var(--text-dark);
+  font-weight: 800;
+}
+
+.process__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Картка */
+.process-card {
+  background: #ffffff;
+  color: var(--text-dark);
+  padding: 35px 25px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+}
+
+/* Ефект наведення на картку (помаранчевий фокус) */
+.process-card:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(194, 97, 40, 0.4);
+  border-color: var(--primary-color);
+}
+
+.process-card:hover .process-card__title,
+.process-card:hover .process-card__text {
+  color: #ffffff;
+}
+
+.process-card:hover .process-card__icon {
+  background-color: #ffffff;
+  color: var(--primary-color);
+}
+
+/* Іконка */
+.process-card__icon {
+  width: 65px;
+  height: 65px;
+  background-color: rgba(194, 97, 40, 0.15);
+  color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  margin: 0 auto 20px;
+  transition: all 0.4s ease;
+}
+
+.process-card__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.process-card__text {
+  font-size: 14px;
+  color: #555555;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+/* --- АНІМАЦІЇ ІКОНОК ПРИ НАВЕДЕННІ --- */
+
+/* 1. Телефон гойдається */
+.process-card:nth-child(1):hover .process-card__icon {
+  animation: phoneRing 0.5s ease-in-out infinite alternate;
+}
+
+/* 2. Машинка їде */
+.process-card:nth-child(2):hover .process-card__icon {
+  animation: carDrive 0.6s ease-in-out;
+}
+
+/* 3. Документи пульсують */
+.process-card:nth-child(3):hover .process-card__icon {
+  animation: docPulse 0.5s ease-in-out infinite alternate;
+}
+
+/* 4. Медаль обертається */
+.process-card:nth-child(4):hover .process-card__icon {
+  animation: badgeSpin 0.7s ease-in-out;
+}
+
+/* Keyframes */
+@keyframes phoneRing {
+  0% { transform: rotate(-15deg); }
+  100% { transform: rotate(15deg); }
+}
+
+@keyframes carDrive {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(12px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes docPulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.18); }
+}
+
+@keyframes badgeSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Мобільна адаптивність */
+@media (max-width: 992px) {
+  .process__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .process__grid {
+    grid-template-columns: 1fr;
+  }
+}

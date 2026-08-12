@@ -1,0 +1,48 @@
+:root {
+  --primary-color: #c26128;
+  --primary-hover: #a34e1e;
+  --dark-bg: #2f343a;
+  --light-bg: #f8f9fa;
+  --text-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--light-bg);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Анімація появи блоків при завантаженні */
+.fade-in-section {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
