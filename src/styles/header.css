@@ -1,7 +1,64 @@
 .top-bar-orange {
-  height: 35px; 
+  min-height: 35px;
   background-color: var(--primary-color);
   width: 100%;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-orange__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px 20px;
+}
+
+.top-bar-orange__phone {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 800;
+  margin-left: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  vertical-align: middle;
+}
+
+.top-bar-phone-badge {
+  width: 22px;
+  height: 22px;
+  background-color: #ffffff;
+  color: var(--primary-color, #c26128);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.top-bar-phone-badge svg {
+  width: 12px;
+  height: 12px;
+  fill: var(--primary-color, #c26128);
+  transition: fill 0.2s ease;
+}
+
+.top-bar-orange__phone:hover {
+  text-decoration: underline;
+}
+
+.top-bar-orange__phone:hover .top-bar-phone-badge {
+  background-color: var(--dark-bg, #2f343a);
+  transform: scale(1.1);
+}
+
+.top-bar-orange__phone:hover .top-bar-phone-badge svg {
+  fill: #ffffff;
 }
 
 .header {
@@ -16,7 +73,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px; /* Внутрішній відступ для вмісту шапки */
+  padding: 12px 20px;
 }
 
 .header__logo img {
@@ -76,8 +133,26 @@
   border-radius: 2px;
 }
 
+/* Burger Active state */
+.burger-btn--active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.burger-btn--active span:nth-child(2) {
+  opacity: 0;
+}
+.burger-btn--active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
 /* Mobile Adaptive */
 @media (max-width: 768px) {
+  .top-bar-orange__container {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    font-size: 12px;
+  }
+
   .burger-btn {
     display: flex;
   }
@@ -91,6 +166,7 @@
     background-color: var(--dark-bg);
     padding: 20px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
   }
 
   .nav--active {
