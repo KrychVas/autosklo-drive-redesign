@@ -1,6 +1,18 @@
+import { servicesData } from '../data/siteData.js';
 import '../styles/services.css';
-
 export function renderServices() {
+  const serviceCards = Object.values(servicesData)
+    .map(
+      (service) => `
+      <a href="#service/${service.id}" class="service-card">
+        <h3>${service.title}</h3>
+        <p>${service.description}</p>
+        <span class="service-card__more">Více informací →</span>
+      </a>
+    `
+    )
+    .join('');
+
   return `
     <section class="services fade-in-section" id="services">
       <div class="container">
@@ -10,18 +22,7 @@ export function renderServices() {
         </div>
 
         <div class="services__grid">
-          <div class="service-card">
-            <h3>Výměna čelního skla</h3>
-            <p>Kompletní výměna poškozeného čelního skla pro všechny typy vozidel.</p>
-          </div>
-          <div class="service-card">
-            <h3>Oprava prasklin</h3>
-            <p>Rychlá oprava drobných prasklin a pavouků bez nutnosti výměny celého skla.</p>
-          </div>
-          <div class="service-card">
-            <h3>Mobilní servis</h3>
-            <p>Přijedeme za vámi a opravíme sklo přímo u vás doma nebo v práci.</p>
-          </div>
+          ${serviceCards}
         </div>
       </div>
     </section>
