@@ -1,29 +1,39 @@
 /* --- PROCESS SECTION --- */
 .process {
-  padding: 80px 0;
-  background-color: var(--light-bg);
-  color: var(--text-dark);
+  padding: 100px 0 120px;
+  background-color: var(--dark-bg, #2f343a);
+  color: #ffffff;
+  position: relative;
 }
 
 .process__header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .process .section-subtitle {
-  color: var(--primary-color);
+  color: var(--primary-color, #c26128);
   font-weight: 700;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.process .section-subtitle::after {
+  content: '';
   display: block;
-  margin-bottom: 8px;
+  width: 25px;
+  height: 2px;
+  background-color: var(--primary-color, #c26128);
+  margin: 4px auto 0;
 }
 
 .process .section-title {
-  font-size: 34px;
-  color: var(--text-dark);
+  font-size: 38px;
+  color: #ffffff;
   font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
 .process__grid {
@@ -32,120 +42,76 @@
   gap: 24px;
 }
 
-/* Картка */
+/* Card design matching screenshot */
 .process-card {
   background: #ffffff;
-  color: var(--text-dark);
-  padding: 35px 25px;
-  border-radius: 16px;
+  color: #1a1a1a;
+  padding: 40px 25px 35px;
+  border-radius: 20px;
   text-align: center;
-  border: 1px solid #e9ecef;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Ефект наведення на картку (помаранчевий фокус) */
 .process-card:hover {
-  background-color: var(--primary-color);
-  color: #ffffff;
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(194, 97, 40, 0.4);
-  border-color: var(--primary-color);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(194, 97, 40, 0.3);
 }
 
-.process-card:hover .process-card__title,
-.process-card:hover .process-card__text {
-  color: #ffffff;
-}
-
-.process-card:hover .process-card__icon {
-  background-color: #ffffff;
-  color: var(--primary-color);
-}
-
-/* Іконка */
+/* Orange circle icon with white symbol */
 .process-card__icon {
-  width: 65px;
-  height: 65px;
-  background-color: rgba(194, 97, 40, 0.15);
-  color: var(--primary-color);
+  width: 70px;
+  height: 70px;
+  background-color: var(--primary-color, #c26128);
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  margin: 0 auto 20px;
-  transition: all 0.4s ease;
+  margin: 0 auto 24px;
+  box-shadow: 0 4px 12px rgba(194, 97, 40, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.process-card__icon svg {
+  width: 32px;
+  height: 32px;
+  fill: #ffffff;
+}
+
+.process-card:hover .process-card__icon {
+  transform: scale(1.1);
+  background-color: var(--primary-hover, #a34e1e);
 }
 
 .process-card__title {
   font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  transition: color 0.3s ease;
+  font-weight: 800;
+  margin-bottom: 14px;
+  color: #111111;
 }
 
 .process-card__text {
   font-size: 14px;
-  color: #555555;
+  color: #4b5563;
   line-height: 1.6;
-  transition: color 0.3s ease;
 }
 
-/* --- АНІМАЦІЇ ІКОНОК ПРИ НАВЕДЕННІ --- */
-
-/* 1. Телефон гойдається */
-.process-card:nth-child(1):hover .process-card__icon {
-  animation: phoneRing 0.5s ease-in-out infinite alternate;
-}
-
-/* 2. Машинка їде */
-.process-card:nth-child(2):hover .process-card__icon {
-  animation: carDrive 0.6s ease-in-out;
-}
-
-/* 3. Документи пульсують */
-.process-card:nth-child(3):hover .process-card__icon {
-  animation: docPulse 0.5s ease-in-out infinite alternate;
-}
-
-/* 4. Медаль обертається */
-.process-card:nth-child(4):hover .process-card__icon {
-  animation: badgeSpin 0.7s ease-in-out;
-}
-
-/* Keyframes */
-@keyframes phoneRing {
-  0% { transform: rotate(-15deg); }
-  100% { transform: rotate(15deg); }
-}
-
-@keyframes carDrive {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(12px); }
-  100% { transform: translateX(0); }
-}
-
-@keyframes docPulse {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.18); }
-}
-
-@keyframes badgeSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Мобільна адаптивність */
-@media (max-width: 992px) {
+/* Mobile Adaptive */
+@media (max-width: 1024px) {
   .process__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 600px) {
   .process__grid {
     grid-template-columns: 1fr;
+  }
+  .process .section-title {
+    font-size: 28px;
   }
 }
