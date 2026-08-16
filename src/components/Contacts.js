@@ -84,15 +84,15 @@ export function renderContacts() {
           <div class="contacts__info-card">
             <h3 class="contacts__info-title">Volejte Nám</h3>
             
-            <div class="contacts__main-phone">
-              <div class="contacts__phone-icon">
+            <a href="tel:${siteConfig.phoneRaw}" class="contacts__phone-link-card">
+              <div class="contacts__phone-icon-circle">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.02-.24c1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
               </div>
-              <div>
+              <div class="contacts__phone-text-wrapper">
                 <div class="contacts__phone-label">Jediná Infolinka Pro Obě Pobočky</div>
-                <a href="tel:${siteConfig.phoneRaw}" class="contacts__phone-number">${siteConfig.phone}</a>
+                <div class="contacts__phone-number-text">${siteConfig.phone}</div>
               </div>
-            </div>
+            </a>
 
             <h3 class="contacts__info-title" style="margin-top: 30px;">Naše Pobočky</h3>
             <div class="contacts__branches-list">

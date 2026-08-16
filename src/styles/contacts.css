@@ -56,55 +56,63 @@
   color: var(--text-light);
 }
 
-.contacts__main-phone {
-  background: rgba(194, 97, 40, 0.15);
-  border: 1px solid var(--primary-color);
-  border-radius: 12px;
-  padding: 20px;
-  margin-bottom: 30px;
+/* Kнопка телефону як у Hero */
+.contacts__phone-link-card {
   display: flex;
   align-items: center;
   gap: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  padding: 10px 24px 10px 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-bottom: 30px;
 }
 
-.contacts__phone-icon {
-  width: 48px;
-  height: 48px;
+.contacts__phone-link-card:hover {
+  background: rgba(194, 97, 40, 0.15);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.contacts__phone-icon-circle {
+  width: 44px;
+  height: 44px;
   background-color: var(--primary-color, #c26128);
-  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
   box-shadow: 0 4px 12px rgba(194, 97, 40, 0.3);
+  transition: transform 0.3s ease;
 }
 
-.contacts__phone-icon svg {
-  width: 22px;
-  height: 22px;
+.contacts__phone-link-card:hover .contacts__phone-icon-circle {
+  transform: scale(1.1);
+}
+
+.contacts__phone-icon-circle svg {
+  width: 18px;
+  height: 18px;
   fill: #ffffff;
 }
 
 .contacts__phone-label {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #f08c4a;
   font-weight: 700;
+  margin-bottom: 2px;
 }
 
-.contacts__phone-number {
-  color: var(--text-light);
-  text-decoration: none;
-  font-size: 24px;
+.contacts__phone-number-text {
+  color: #ffffff;
+  font-size: 22px;
   font-weight: 800;
-  display: block;
-  transition: color 0.2s ease;
-}
-
-.contacts__phone-number:hover {
-  color: var(--primary-color);
+  line-height: 1;
 }
 
 .contacts__branches-list {
@@ -341,6 +349,12 @@ textarea.form-control {
   }
   .contacts__info-card {
     padding: 25px 20px;
+  }
+  .contacts__phone-number-text {
+    font-size: 18px;
+  }
+  .contacts__phone-link-card {
+    padding: 8px 16px 8px 8px;
   }
   .toast-container {
     left: 20px;
