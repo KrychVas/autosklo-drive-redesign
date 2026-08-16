@@ -1,4 +1,4 @@
-import{r as e}from"./index-BhFgnTMa.js";function t(){return`
+import{r as e}from"./index-DYU2Qrhp.js";function t(){return`
     <section class="process fade-in-section" id="process">
       <div class="container">
         <div class="process__header">
