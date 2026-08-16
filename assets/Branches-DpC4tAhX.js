@@ -1,4 +1,4 @@
-import{a as e,n as t}from"./index-h1CVYyAB.js";function n(){return`
+import{a as e,n as t}from"./index-BhFgnTMa.js";function n(){return`
     <section class="branches fade-in-section" id="branches">
       <div class="container">
         <div class="branches__header">
