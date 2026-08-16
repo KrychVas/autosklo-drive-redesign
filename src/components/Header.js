@@ -17,7 +17,7 @@ export function renderHeader() {
       <div class="container header__container">
         <!-- Logo - Clicking returns to homepage top -->
         <a href="#home" class="header__logo" id="headerLogo">
-          <img src="/logo.png" alt="AUTOSKLO DRIVE" />
+          <img src="${import.meta.env.BASE_URL}logo.png" alt="AUTOSKLO DRIVE" />
         </a>
 
         <!-- Navigation -->
