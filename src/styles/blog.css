@@ -1,0 +1,120 @@
+/* --- BLOG SECTION --- */
+.blog-section {
+  padding: 80px 0 90px;
+  background-color: #ffffff;
+  color: var(--text-dark);
+  text-align: center;
+}
+
+.blog-section__header {
+  margin-bottom: 40px;
+}
+
+.blog-section .section-subtitle {
+  color: var(--primary-color, #c26128);
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.blog-section .section-subtitle::after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 2px;
+  background-color: var(--primary-color, #c26128);
+  margin: 4px auto 0;
+}
+
+.blog-section .section-title {
+  font-size: 34px;
+  color: #111111;
+  font-weight: 800;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.blog-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e9ecef;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.blog-card__image {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.blog-card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-card__tag {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.blog-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.blog-card__excerpt {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+
+.blog-card__meta {
+  display: flex;
+  gap: 14px;
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 16px;
+}
+
+.blog-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.blog-card__link:hover {
+  text-decoration: underline;
+}
