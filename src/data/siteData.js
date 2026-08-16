@@ -46,7 +46,7 @@ export const servicesData = {
     fullText: `
       <p>Nabízíme profesionální výměnu čelních, bočních i zadních skel u všech typů osobních i nákladních automobilů. Naše práce splňuje nejpřísnější standardy bezpečnosti.</p>
       <div style="margin: 25px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        <img src="/assets/twincitiesautoglass-1536x941.jpg" alt="Výměna čelního skla" style="width: 100%; height: auto; max-height: 420px; object-fit: cover; display: block;" />
+        <img src="${import.meta.env.BASE_URL}assets/twincitiesautoglass-1536x941.jpg" alt="Výměna čelního skla" style="width: 100%; height: auto; max-height: 420px; object-fit: cover; display: block;" />
       </div>
       <ul>
         <li>Certifikovaná skla od předních výrobců</li>
@@ -54,7 +54,7 @@ export const servicesData = {
         <li>Záruka na těsnost a montáž</li>
       </ul>
     `,
-    image: '/assets/twincitiesautoglass-1536x941.jpg',
+    image: `${import.meta.env.BASE_URL}assets/twincitiesautoglass-1536x941.jpg`,
   },
   'oprava-prasklin': {
     id: 'oprava-prasklin',
@@ -65,7 +65,7 @@ export const servicesData = {
     fullText: `
       <p>Ne každá prasklina vyžaduje výměnu celého skla. Pokud je poškození malé a mimo zorné pole řidiče, dokážeme ho opravit metodou scelování.</p>
       <div style="margin: 25px 0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        <img src="/assets/prask.jpg" alt="Oprava prasklin a pavouků čelního skla" style="width: 100%; height: auto; max-height: 420px; object-fit: cover; display: block;" />
+        <img src="${import.meta.env.BASE_URL}assets/prask.jpg" alt="Oprava prasklin a pavouků čelního skla" style="width: 100%; height: auto; max-height: 420px; object-fit: cover; display: block;" />
       </div>
       <ul>
         <li>Ušetříte čas i peníze</li>
@@ -73,7 +73,7 @@ export const servicesData = {
         <li>Ponechání původního továrního skla</li>
       </ul>
     `,
-    image: '/assets/prask.jpg',
+    image: `${import.meta.env.BASE_URL}assets/prask.jpg`,
   },
 };
 
@@ -81,7 +81,7 @@ export const blogPosts = [
   {
     id: 'vymena-nebo-oprava',
     tag: 'Rady & Tipy',
-    image: '/assets/scaled.jpg',
+    image: `${import.meta.env.BASE_URL}assets/scaled.jpg`,
     alt: 'Jak poznat poškozené čelní sklo',
     title: 'Jak poznat, kdy je nutná výměna a kdy stačí oprava čelního skla?',
     excerpt: 'Přečtěte si, jaká poškození lze bezpečně opravit scelováním a kdy je z bezpečnostních důvodů nutná výměna.',
@@ -95,7 +95,7 @@ export const blogPosts = [
       <ul>
         <li>Prasklina nebo pavouček je <strong>menší než 3 cm</strong></li>
         <li>Poškození se nenachází přímo <strong>v zorném poli řidiče</strong> (přibližně 30×40 cm ve středu skla)</li>
-        <li>Prasklina nezasahuje na <strong>край skla</strong> (okraj pevnosti)</li>
+        <li>Prasklina nezasahuje na <strong>okraj skla</strong> (okraj pevnosti)</li>
         <li>Sklo není poškozeno <strong>zevnitř</strong></li>
         <li>Jde o <strong>čistou, nezamaštěnou</strong> prasklinu (čím déle čekáte, tím horší)</li>
       </ul>
@@ -106,7 +106,7 @@ export const blogPosts = [
         <li>Prasklina je <strong>delší než 3 cm</strong> nebo se rozrostla</li>
         <li>Poškození zasahuje do <strong>zorného pole řidiče</strong></li>
         <li>Sklo je popraskané na <strong>více místech</strong> najednou</li>
-        <li>Poškození sahá <strong>ke krayi skla</strong> – hrozí prasknutí celého skla</li>
+        <li>Poškození sahá <strong>ke kraji skla</strong> – hrozí prasknutí celého skla</li>
         <li>Na skle jsou <strong>hluboké škrábance</strong> nebo mlhavé plochy</li>
       </ul>
 
@@ -122,7 +122,7 @@ export const blogPosts = [
   {
     id: 'pojisteni-autoskel',
     tag: 'Pojištění',
-    image: '/assets/insurance.jpeg',
+    image: `${import.meta.env.BASE_URL}assets/insurance.jpeg`,
     alt: 'Vyřízení pojištění autoskel',
     title: 'Jak probíhá vyřízení pojistné události bez vaší starosti',
     excerpt: 'Kompletní návod k tomu, jak za vás vyřídíme veškerou administrativu s vaší pojišťovnou zdarma.',
@@ -166,7 +166,7 @@ export const blogPosts = [
   {
     id: 'zima-a-sklo',
     tag: 'Údržba',
-    image: '/assets/Winter-Star-Auto-Glass.jpg',
+    image: `${import.meta.env.BASE_URL}assets/Winter-Star-Auto-Glass.jpg`,
     alt: 'Péče o autosklo v zimě',
     title: 'Nejčastější chyby při škrabání zamrzlého skla v zimě',
     excerpt: 'Vyvarujte se poškrábání čelního skla a prasklinám způsobeným teplotním šokem při odmrazování.',
@@ -224,10 +224,6 @@ export const processSteps = [
   },
 ];
 
-/**
- * WordPress REST API Integration Ready Helper
- * Allows switching seamlessly from local siteData to remote WP REST API.
- */
 export async function fetchSiteData() {
   const wpApiEndpoint = import.meta.env.VITE_WP_API_ENDPOINT;
   if (wpApiEndpoint) {
